@@ -1,0 +1,65 @@
+[
+  {
+   "description":"This is Post request",
+   "request":{
+       "uri":"/postdemo",
+       "method":"post"
+   },
+   "response":{
+       "text":"This is Post response"
+   }
+  },
+  { 
+   "description":"This is Post request with paramter",
+   "request":{
+       "uri":"/postwithparam",
+       "method":"post",
+       "forms":{
+           "name":"zhangsan",
+           "age":"18"
+       }
+   },
+   "response":{
+       "text":"This is Post response with paramter"
+   }
+  },
+  { 
+   "description":"This is Post request with cookies",
+   "request":{
+       "uri":"/post/with/cookies",
+       "method":"post",
+       "cookies":{
+          "login":"true"
+       },
+       "json":{
+           "name":"zhangsan",
+           "age":"18"
+       }
+   },
+   "response":{
+       "status":200,
+       "json":{
+          "zhangsan":"success",
+           "status":"1"
+       }
+   }
+  },
+  { 
+   "description":"This is Post request with header",
+   "request":{
+       "uri":"/postwithheader",
+       "method":"post",
+       "headers":{
+           "content-type":"application/json"
+       },
+       "json":{
+           "name":"zhangsan",
+           "age":"18"
+       }
+   },
+   "response":{
+       "text":"This is Post response with paramter"
+   }
+  }
+  
+]

@@ -1,0 +1,24 @@
+[
+ {
+   "description":"This get request with cookies return",
+   "request":{
+       "uri":"/getCookies",
+       "method":"get"
+   },
+   "response":{
+       "cookies":{
+         "login":"true"       
+       },
+       "text":"This is response with cookies"
+   }
+  },
+  {
+   "description":"This is my first mock demo",
+   "request":{
+       "uri":"/demo"
+   },
+   "response":{
+       "text":"This is response"
+   }
+  }
+]

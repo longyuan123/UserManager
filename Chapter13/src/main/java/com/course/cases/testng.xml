@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="TestNG XML Dependency Test Suite" time-out="3000">
+    <test name="Simple example">
+        <groups>
+            <run>
+                <include name="loginTrue"></include>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="com.course.cases.LoginTest"/>
+            <class name="com.course.cases.AddUserTest"/>
+        </classes>
+    </test>
+</suite>

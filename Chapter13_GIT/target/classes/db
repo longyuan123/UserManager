@@ -1,0 +1,58 @@
+create table if not exists user(
+id int unsigned auto_increment,
+name varchar(100) not null,
+password varchar(10) not null,
+age varchar(10),
+sex varchar(10),
+permission varchar(10),
+isDelete varchar(10),
+primary key(id)
+) engine=InnoDB default charset=utf8;
+
+create table if not exists updateUserInfoCase(
+id int unsigned auto_increment,
+userId int,
+userName varchar(100) not null,
+age  varchar(10),
+sex varchar(10),
+permission  varchar(10),
+isDelete  varchar(10),
+expected varchar(100) default 'getUpdateUserInfo',
+primary key(id)
+) engine=InnoDB default charset=utf8;
+
+create table if not exists getUserInfoCase(
+id int unsigned auto_increment,
+userId int,
+expected varchar(100) default 'getUserInfo',
+primary key(id)
+) engine=InnoDB default charset=utf8;
+
+create table if not exists getUserListCase(
+id int unsigned auto_increment,
+userName varchar(100) not null,
+password varchar(10) not null,
+sex varchar(10),
+expected varchar(100) default 'getUserList',
+primary key(id)
+) engine=InnoDB default charset=utf8;
+
+create table if not exists logincase(
+id int unsigned auto_increment,
+userName varchar(100) not null,
+password varchar(10) not null,
+expected varchar(100) default true,
+primary key(id)
+) engine=InnoDB default charset=utf8;
+
+create table if not exists addusercase(
+id int unsigned auto_increment,
+userId int,
+userName varchar(100) not null,
+age  varchar(10),
+sex varchar(10),
+permission  varchar(10),
+isDelete  varchar(10),
+expected varchar(100) default 'getUpdateUserInfo',
+primary key(id)
+) engine=InnoDB default charset=utf8;

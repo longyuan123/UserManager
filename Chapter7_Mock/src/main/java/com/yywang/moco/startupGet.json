@@ -1,0 +1,96 @@
+[
+  {
+   "description":"This is Get request without paramter",
+   "request":{
+       "uri":"/getdemo",
+       "method":"get"
+   },
+   "response":{
+       "text":"This is response for Get request without paramter "
+   }
+  },
+  {
+   "description":"This is Get request with paramter",
+   "request":{
+       "uri":"/getwithparam",
+       "method":"get",
+       "queries":{
+           "name":"zhangsan",
+           "age":"18"
+       }
+   },
+   "response":{
+       "text":"This is response for Get request with paramter "
+   }
+  },
+  {
+   "description":"This get request with cookies return",
+   "request":{
+       "uri":"/getCookies",
+       "method":"get"
+   },
+   "response":{
+       "cookies":{
+         "login":"true"
+       },
+       "text":"This is response with cookies"
+   }
+  },
+  {
+   "description":"This is Get request with cookies",
+   "request":{
+       "uri":"/get/with/cookies",
+       "method":"get",
+       "cookies":{
+          "login":"true"
+       }
+   },
+   "response":{
+       "text":"This is response for get request with cookies"
+   }
+  },
+  { 
+   "description":"This is Post request with cookies",
+   "request":{
+       "uri":"/post/with/cookies",
+       "method":"post",
+       "cookies":{
+          "login":"true"
+       },
+       "json":{
+           "name":"zhangsan",
+           "age":"18"
+       }
+   },
+   "response":{
+       "status":200,
+       "json":{
+          "zhangsan":"success",
+           "status":"1"
+       }
+   }
+  },
+  {
+   "description":"redirect to www.baidu.com",
+   "request":{
+       "uri":"/redirect"
+    },
+   "redirectTo":"http://www.baidu.com"
+  },
+  {
+   "description":"redirect to my path",
+   "request":{
+       "uri":"/redirect2"
+    },
+   "redirectTo":"redirected"
+  },
+  {
+   "description":"This is my path",
+   "request":{
+       "uri":"/redirected"
+   },
+   "response":{
+       "text":"redirect success!"
+   }
+  }
+]

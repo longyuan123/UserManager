@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="TestNG XML Dependency Test Suite" time-out="300">
+    <test name="Simple example">
+        <groups>
+            <run>
+                <include name="child"></include>
+                <exclude name="parent"></exclude>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="dep.TestDep"/>
+        </classes>
+    </test>
+</suite>

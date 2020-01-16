@@ -1,0 +1,96 @@
+#create a database
+create database test_my_db;
+#create a table
+use test_my_db
+create table if not exists user(
+id int unsigned auto_increment,
+name varchar(100) not null,
+password varchar(10) not null,
+age int,
+sex varchar(10),
+primary key(id)
+) engine=InnoDB default charset=utf8;
+
+#insert data
+insert into user(name, password, age, sex) values('yywang','123456',30,'W');
+insert into user(name, password, age, sex) values('ZhangSan','123456',28,'M');
+insert into user(name, password, age, sex) values('LiSi','123456',32,'W');
+insert into user(name, password, age, sex) values('WangWu','123456',33,'W');
+
+#update
+update user set age=31 where name='yywang'
+
+#delete
+delete from user where name='yywang';
+
+#like
+select * from user  WHERE name LIKE '%San';
+
+#查看表结构
+show columns from user;
+
+#Alter change table name or column name
+alter table user add i int;
+alter table user drop i;
+alter table user add i int first;
+alter table user drop i;
+alter table user add i int after name;
+
+#修改字段默认值
+alter table user alter i set default 1000;
+
+#修改表名
+alter table user rename to user2
+
+#查看用户
+use mysql;
+select user as u, host from user;
+
+
+create table if not exists add_user_case(
+id int unsigned auto_increment,
+name varchar(100) not null,
+password varchar(10) not null,
+age int,
+sex varchar(10),
+permission int default 0,
+isDelete int default 0,
+expected varchar(10) default true,
+primary key(id)
+) engine=InnoDB default charset=utf8;
+
+create table if not exists get_user_info_case(
+id int unsigned auto_increment,
+userId int,
+expected varchar(100) default 'getUserInfo',
+primary key(id)
+) engine=InnoDB default charset=utf8;
+
+create table if not exists get_user_list_case(
+id int unsigned auto_increment,
+name varchar(100) not null,
+password varchar(10) not null,
+sex varchar(10),
+expected varchar(100) default 'getUserList',
+primary key(id)
+) engine=InnoDB default charset=utf8;
+
+create table if not exists login_case(
+id int unsigned auto_increment,
+name varchar(100) not null,
+password varchar(10) not null,
+expected varchar(100) default true,
+primary key(id)
+) engine=InnoDB default charset=utf8;
+
+create table if not exists add_user_case(
+id int unsigned auto_increment,
+userId int,
+name varchar(100) not null,
+age int,
+sex varchar(10),
+permission int default 0,
+isDelete int default 0,
+expected varchar(100) default 'getUpdateUserInfo',
+primary key(id)
+) engine=InnoDB default charset=utf8;

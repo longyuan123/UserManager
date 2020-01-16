@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<suite name="用户管理系统测试套件">
+    <test name="用户管理系统测试用例">
+        <classes>
+            <class name="com.course.cases.LoginTest">
+                <methods>
+                    <include name="loginTrue"></include>
+                    <include name="loginFalse"></include>
+                </methods>
+            </class>
+            <class name="com.course.cases.AddUserTest">
+                <methods>
+                    <include name="addUser"></include>
+                </methods>
+            </class>
+            <class name="com.course.cases.GetUserInfoTest">
+                <methods>
+                    <include name="getUserInfoTest"></include>
+                </methods>
+            </class>
+            <class name="com.course.cases.UpdateUserInfoTest">
+                <methods>
+                    <include name="updateUserInfoTest"></include>
+                    <include name="deleteUser"></include>
+                </methods>
+            </class>
+            <class name="com.course.cases.GetUserInfoListTest">
+                <methods>
+                    <include name="getUserInfoListTest"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="第二个测试">
+        <classes>
+            <class name="com.course.cases2.Test2"></class>
+        </classes>
+    </test>
+    <listeners>
+        <!--这是官方的报告,但是css文件不容易加载出来 -->
+        <!--<listener class-name="com.vimalselvam.testng.listener.ExtentTestNgFormatter"></listener>-->
+        <!--这是自己重新实现的-->
+        <listener class-name="com.course.config.ExtentTestNGIReporterListener"></listener>
+    </listeners>
+</suite>

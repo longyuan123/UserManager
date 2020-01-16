@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Suite" verbose="1">
+    <test name="Test1">
+        <classes>
+            <class name="com.course.cases.LoginTest" />
+            <class name="com.course.cases.AddUserTest" />
+            <class name="com.course.cases.DependentTestExamples" />
+            <class name="com.course.cases.DependentTest2" />
+        </classes>
+    </test>
+</suite>

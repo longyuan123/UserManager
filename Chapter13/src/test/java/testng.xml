@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="TestNG XML Dependency Test Suite" time-out="300">
+<!--
+    <test name="TestNGXML Dependency Test" verbose="2" time-out="500">
+        <groups>
+            <dependencies>
+                <group depends-on="pre-tests" name="tests"></group>
+                <group depends-on="tests" name="post-tests"></group>
+            </dependencies>
+        </groups>
+
+        <classes>
+            <class
+                    name="TestNGDependencyXMLExample">
+                <methods>
+                    <include name="init"></include>
+                    <include name="cleanup"></include>
+                    <include name="insert" invocation-numbers="1"></include>
+                    <include name="select" invocation-numbers="2"></include>
+                    <include name="update" invocation-numbers="3"></include>
+                    <include name="delete" invocation-numbers="4"></include>
+                </methods>
+            </class>
+            <class name="Test2"></class>
+        </classes>
+    </test>
+
+
+
+
+    <test name="Test1____">
+        <groups>
+            <run>
+                <include name="windows.*"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="Test1"/>
+        </classes>
+    </test>
+
+
+    <test name="Regression1">
+        <groups>
+            <define name="functest">
+                <include name="windows"/>
+                <include name="linux"/>
+            </define>
+
+            <define name="all">
+                <include name="functest"/>
+                <include name="checkintest"/>
+            </define>
+
+            <run>
+                <include name="checkintest"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="Test1"/>
+        </classes>
+    </test>
+
+    -->
+
+    <test name="Simple example">
+        <groups>
+            <run>
+                <include name="checkintest"/>
+                <exclude name="broken"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="Test2"/>
+        </classes>
+    </test>
+</suite>
